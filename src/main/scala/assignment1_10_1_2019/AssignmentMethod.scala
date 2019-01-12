@@ -14,6 +14,9 @@ class AssignmentMethod {
     }
     printElement(list, list)
   }
+
+
+
   def indexOfElement(element: Int, list: List[Int]): Int = {
     def findIndex(index: Int, list: List[Int]): Int = {
       list match {
@@ -26,11 +29,14 @@ class AssignmentMethod {
     }
     findIndex(0, list)
   }
-  def maximumNumberInList(list: List[Int]): Option[Int] = list match {
+
+  def maximumNumberInList(list: List[Int]): Option[Int] =
+    list match {
     case Nil => None
-    case List(x: Int) => Some(x)
-    case x :: y :: rest => maximumNumberInList( (if (x > y) x else y) :: rest )
+    case first :: Nil => Some(first)
+    case head :: next :: rest => maximumNumberInList( (if (head > next) head else next) :: rest )
   }
+
   def getFibonacci(index: Int): Int = {
     if (index <= 0) {
       0
@@ -40,14 +46,40 @@ class AssignmentMethod {
       getFibonacci(index - 1) + getFibonacci(index - 2)
     }
   }
-  def getFactorial(n: BigInt): BigInt = {
-    def go(acc: BigInt, n: BigInt): BigInt = {
-      if (n <= 1)
+
+  def getFactorial(number: BigInt): BigInt = {
+    def go(acc: BigInt, number: BigInt): BigInt = {
+      if (number <= 1)
         acc
       else
-        go(acc * n, n - 1)
+        go(acc * number, number - 1)
     }
-    go(1, n)
+    go(1, number)
   }
 
+  def Fibonacci(index:Int):Int=
+  {
+    index match {
+      case 0=>0
+      case 1=>1
+      case _=>Fibonacci(index-1)+Fibonacci(index-2)
+    }
+  }
+
+  def factorial(number: Int): Int = {
+    def go(fact: Int, number: Int): Int = {
+      number match {
+        case 1 => fact
+        case _=>go(fact * number, number - 1)
+      }
+    }
+    go(1, number)
+  }
+
+
 }
+
+
+
+
+
