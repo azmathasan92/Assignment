@@ -30,7 +30,7 @@ object ListUsingStringInterpolation extends App {
   println()
   println(get.areaShape("rectangle",length,breadth,(length,breadth)=>length*breadth))
   println(get.areaShape("rhombus",length,breadth,(side1,side2)=>math.sqrt(side1*side1+side2*side2).toInt))
-  println(get.areaShape("parallelogramm",length,breadth,(side1,side2)=>side1/side2))
+  println(get.areaShape("parallelogram",length,breadth,(side1,side2)=>side1/side2))
 
 
   //ques-3

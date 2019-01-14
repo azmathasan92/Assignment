@@ -17,12 +17,12 @@ class AssignmentQuestions {
     shape match {
       case "rectangle" => "area of rectangle is " + f(side1, side2)
       case "rhombus" => "area of rhombus is " + (f(side1, side2) * f(side1, side2) / 2)
-      case "parallelogramm" => "area of parallelogramm is " + side2 * f(side1, side2)
+      case "parallelogram" => "area of parallelogram is " + side2 * f(side1, side2)
       case _ => s"Not defined yet for $shape"
     }
   }
-  def sumTest(f: (Int, Int) => Int, a: Int, b: Int): Int = {
-       f(a,b)
+  def sumTest(f: (Int, Int) => Int, number1: Int, number2: Int): Int = {
+       f(number1,number2)
     }
 
 }
